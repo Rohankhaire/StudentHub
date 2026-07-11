@@ -66,7 +66,35 @@ Refer to the complete script at [schema.sql](file:///e:/StudentHub/studenthub-ba
 
 ---
 
+## Default System Credentials
+
+To login and navigate the system, use these default credentials:
+
+### 1. Default Administrator Account (Superuser)
+This account is automatically seeded in the database on startup:
+* **Email / Username**: `admin@studenthub.com`
+* **Password**: `admin123`
+* **Role**: `ROLE_ADMIN` (Access to the Admin Command Center dashboard)
+*(Note: In the previous version of the codebase, it was admin@gmail.com with password admin@123)*
+
+### 2. Creating Faculty & Student Accounts
+Administrators can create new student and teacher logins from the admin panel:
+* **Faculty Members**:
+  * **Email**: *Defined by the Admin*
+  * **Password**: *Defined by the Admin* (Defaults to `Faculty@123` if left blank)
+  * **Role**: `ROLE_FACULTY` (Access to the Faculty Portal dashboard)
+* **Students**:
+  * **Email**: *Defined by the Admin*
+  * **Password**: *Defined by the Admin* (Defaults to `Student@123` if left blank)
+  * **Role**: `ROLE_STUDENT` (Access to the Student Hub Portal dashboard)
+
+### 3. Public Self-Registration
+Users can self-register using the signup page/endpoint. They specify their own email and password, which automatically assigns them the Student role (`ROLE_STUDENT`).
+
+---
+
 ## Installation & Setup
+
 
 ### Prerequisites
 - **Java JDK 21+**
